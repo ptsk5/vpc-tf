@@ -7,7 +7,7 @@ provider "ibm" {
 
 locals {
   BASENAME = "schematics" 
-  ZONE     = "us-south-1"
+  ZONE     = "eu-de"
 }
 
 resource ibm_is_vpc "vpc" {
