@@ -51,7 +51,6 @@ data ibm_resource_group "group" {
   name = "${var.resource_group}"
 }
 
-/*
 resource ibm_is_instance "vsi1" {
   name    = "${local.BASENAME}-vsi1"
   resource_group = "${data.ibm_resource_group.group.id}"
@@ -66,8 +65,8 @@ resource ibm_is_instance "vsi1" {
     security_groups = ["${ibm_is_security_group.sg1.id}"]
   }
 }
-*/
-  
+
+/*  
 resource ibm_is_instance "vsi2" {
   name    = "${local.BASENAME}-vsi2"
   resource_group = "${data.ibm_resource_group.group.id}"
@@ -82,14 +81,14 @@ resource ibm_is_instance "vsi2" {
     security_groups = ["${ibm_is_security_group.sg1.id}"]
   }
 }
-
+*/
+  
 resource ibm_is_floating_ip "fip1" {
   name   = "${local.BASENAME}-fip1"
   target = "${ibm_is_instance.vsi1.primary_network_interface.0.id}"
 }
 
-/*
 output sshcommand {
   value = "ssh root@${ibm_is_floating_ip.fip1.address}"
 }
-*/
+
