@@ -51,6 +51,7 @@ data ibm_resource_group "group" {
   name = "${var.resource_group}"
 }
 
+/*
 resource ibm_is_instance "vsi1" {
   name    = "${local.BASENAME}-vsi1"
   resource_group = "${data.ibm_resource_group.group.id}"
@@ -65,7 +66,8 @@ resource ibm_is_instance "vsi1" {
     security_groups = ["${ibm_is_security_group.sg1.id}"]
   }
 }
-
+*/
+  
 resource ibm_is_instance "vsi2" {
   name    = "${local.BASENAME}-vsi2"
   resource_group = "${data.ibm_resource_group.group.id}"
